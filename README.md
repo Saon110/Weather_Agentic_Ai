@@ -44,8 +44,7 @@ OPENWEATHERMAP_API_KEY=your_openweathermap_api_key_here
 
 4. **Run the python file**
 ```bash
-python3 test.py #linux
-python test.py # windows
+streamlit run test.py
 ```
 
 Once running, the assistant will open in browser where user can give weather related prompts
