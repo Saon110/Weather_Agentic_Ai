@@ -1,3 +1,4 @@
 .env
-.venv/
-app.py
+weather_venv/
+__pycache__/
+*.json

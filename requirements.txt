@@ -1,0 +1,10 @@
+streamlit
+requests
+python-dotenv
+geocoder
+langchain
+langchain-groq
+firebase-admin
+speechrecognition
+elevenlabs
+pyaudio
