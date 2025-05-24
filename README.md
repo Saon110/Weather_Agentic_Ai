@@ -1,58 +1,107 @@
-# 🌦️ Weather Agent using LangChain and Groq
+# 🌦️ Weather Agentic AI
 
-This is a conversational weather assistant powered by **LangChain**, **Groq LLMs**, and **OpenWeatherMap API**. It can:
+An intelligent, conversational weather assistant built with **Streamlit**, **Firebase**, and **ElevenLabs**. Ask weather-related questions via **text or voice**, get precise answers, and hear them spoken back to you.
 
-- Fetch **current weather**
-- Provide **daily forecasts**
-- Retrieve **historical weather data**
-
-If no city is provided, it detects the user's location automatically using their IP address.
-
----
-
-## ✅ Requirements
-
-Before you begin, ensure you have the following:
-
-- Python 3.8 or newer
-- API keys for:
-  - [Groq API](https://console.groq.com/)
-  - [OpenWeatherMap API](https://openweathermap.org/api)
+<div align="center">
+  <img src="https://img.shields.io/github/languages/top/Saon110/Weather_Agentic_Ai" />
+  <img src="https://img.shields.io/github/last-commit/Saon110/Weather_Agentic_Ai" />
+</div>
 
 ---
 
-## 🧠 Installation Steps
+## 🧠 Features
 
-1. **Clone or download this repository**
+- 💬 Conversational weather assistant
+- 🎙️ Voice input using **ElevenLabs Speech-to-Text**
+- 🔊 Voice responses with **ElevenLabs Text-to-Speech**
+- 💾 Chat memory with Firebase (multiple chat sessions)
+- 🧭 Real-time weather data fetching via LLM agent
+- 🧹 Delete individual chat sessions
+- 📋 Intuitive chat-style UI using **Streamlit**
+
+---
+
+## 📸 Demo
+
+> A screenshot or short gif of your chatbot in action would go here.
+
+---
+
+## 🚀 Quick Start
+
+### 1. Clone the Repo
 
 ```bash
-git clone https://github.com/Saon110/Weather_Agentic_Ai
+git clone https://github.com/Saon110/Weather_Agentic_Ai.git
+cd Weather_Agentic_Ai
 ```
 
-2. **Install the required python packages**
+### 2. Install Requirements
 
 ```bash
-pip install langchain requests python-dotenv langchain_groq streamlit dateparser
+pip install -r requirements.txt
 ```
 
-3. **Create a .env file** <br>
-In the root directory of your project, create a .env file with the following content:
-```ini
-GROQ_API_KEY=your_groq_api_key_here
-OPENWEATHERMAP_API_KEY=your_openweathermap_api_key_here
+**`requirements.txt` includes:**
+- `streamlit`
+- `speechrecognition`
+- `pyaudio`
+- `elevenlabs`
+- `firebase-admin`
+- `requests`
+- `python-dotenv`
+
+### 3. Setup API Keys
+
+Create a `.env` file with the following:
+
+```env
+ELEVENLABS_API_KEY=your_elevenlabs_api_key
+OPENAI_API_KEY=your_openai_api_key
 ```
 
-4. **Run the python file**
+### 4. Configure Firebase
+
+Add your Firebase credentials in a `firebase_config.json` file, or modify `firebase_setup.py` to use environment variables.
+
+### 5. Run the App
+
 ```bash
-streamlit run test.py
+streamlit run app.py
 ```
 
-Once running, the assistant will open in browser where user can give weather related prompts
+---
 
+## 🗂 Project Structure
 
-You can ask questions like:
- * What's the weather like in New York today?
- * Give me the forecast for London.
- * What was the weather in Tokyo 3 days ago?
- * Will it rain in Paris tomorrow?
- * Type exit to quit the program.
+```
+.
+├── app.py                  # Main Streamlit app
+├── firebase_chat.py        # Firebase chat handling
+├── firebase_setup.py       # Firebase setup
+├── weather_agent.py        # Weather reasoning agent
+├── voice_io.py             # Combined voice input/output with ElevenLabs
+├── requirements.txt
+└── .env
+```
+
+---
+
+## 🛠️ TODO
+
+- [ ] Add unit tests
+- [ ] Add a frontend for selecting city/location
+- [ ] Deploy on Streamlit Cloud or Hugging Face Spaces
+- [ ] Support more languages in STT/TTS
+
+---
+
+## 🧑‍💻 Author
+
+Made with 💙 by [**Sijon Chisty Saon**](https://github.com/Saon110)
+
+---
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
