@@ -2,3 +2,4 @@
 weather_venv/
 __pycache__/
 *.json
+firebase.py
